@@ -1,0 +1,32 @@
+name: Publish Docker Images
+
+on:
+  push:
+    branches:
+      - master  
+
+jobs:
+  docker-dev-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish dev image to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: brandonkylebailey/pwned-app
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: Dockerfile
+        tags: "dev"
+  docker-latest-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish latest image to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: brandonkylebailey/pwned-app
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: Dockerfile.prod
+        tags: "latest"
