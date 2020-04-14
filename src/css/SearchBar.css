@@ -1,0 +1,36 @@
+
+input[type=text]::placeholder {
+    color: white;
+}
+
+input[type=text] {
+    color: white;
+}
+
+.no-domains {
+    color: greenyellow;
+}
+
+.domains-found {
+    color: red;
+} 
+
+.searchbar-container {
+    width: 75%;
+    margin: auto;
+}
+
+.domains-container-grid {
+    /* width: 75%; */
+    margin: auto;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, auto); 
+}
+
+.domains-list > ul > li {
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+
+}

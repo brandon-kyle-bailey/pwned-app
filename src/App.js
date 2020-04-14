@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 
+import NavBar from './components/NavBar';
 import SearBar from './components/SearchBar';
-
 
 
 function App() {
@@ -11,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <NavBar/>
       <SearBar/>
       </header>
     </div>

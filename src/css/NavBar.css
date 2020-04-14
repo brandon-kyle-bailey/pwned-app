@@ -1,0 +1,15 @@
+.nav-bar {
+    overflow: hidden;
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.nav-bar > h1 {
+    font-size: xx-large;
+    padding: 0px 16px;
+    text-align: left;
+}
