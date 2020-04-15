@@ -1,0 +1,7 @@
+{
+  "proxies": {
+    "/api/": {
+      "origin": "${REACT_APP_DOMAIN}"
+    }
+  }
+}
