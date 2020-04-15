@@ -7,7 +7,13 @@ import '../css/SearchBar.css';
 // Example GET method implementation:
 async function getData(url = '') {
     // Default options are marked with *
-    const response = await fetch(url)
+    const response = await fetch(url, {
+        method: 'GET',
+        //headers: {
+        //    'Accept': 'application/json',
+        //    'Content-Type': 'application/json'
+        //}
+        })
       .then(res => res.json())
       .then(data => data);
     return response; // parses JSON response into native JavaScript objects
