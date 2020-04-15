@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../css/SearchBar.css';
 
 
+
 // Example GET method implementation:
 async function getData(url = '') {
     // Default options are marked with *
@@ -22,7 +23,7 @@ function FoundDomains(props) {
       <li key={props.results.indexOf(item)}>{item.domain}</li>
       ))}
     </ul>
-  </div>  
+  </div>
   );
 };
 
@@ -53,8 +54,11 @@ function SearchBar() {
         setSearchHasOccured(false);
         setResultsFound(false);
 
+        console.log("CURRENT DOMAIN : ", process.env.REACT_APP_DOMAIN);
+
         const [domain, zone] = searchTerm.split(".");
-        const url = `https://api.domainsdb.info/v1/domains/search?domain=${domain}&zone=${zone}`
+        // const url = `https://api.domainsdb.info/v1/domains/search?domain=${domain}&zone=${zone}`
+        const url = `${process.env.REACT_APP_DOMAIN}/v1/domains/search?domain=${domain}&zone=${zone}`
         getData(url).then(data => {
             if(data.hasOwnProperty("domains")) {
               setSearchResults(data.domains.filter(item => item.isDead === "False"));
