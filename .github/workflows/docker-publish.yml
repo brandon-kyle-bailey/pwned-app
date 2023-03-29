@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Publish dev image to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: brandonkylebailey/pwned-app
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Publish latest image to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: brandonkylebailey/pwned-app
         username: ${{ secrets.DOCKER_USERNAME }}
